@@ -1,0 +1,702 @@
+/* Bienvenue dans le css de notre site Internet (ALAOUI SMAILI MEJDI & SEN MUHAMMED). 
+Par rapport à la maquette, certaines choses ont changé/évolué pour des raisons de droit, et d'esthétique.
+Nous pensions qu'il fallait obligatoirement mettre le site sur un seul css mais au final non, d'où le fort nombres de lignes, mais nous avions fait tout notre possible pour que le css soit compréhensible pour tout développeur et qu'il évite énormément la redondance de lignes.
+Bonne correction ! */
+
+/* Partie commune de tout les fichier html grand ecran et petit ecran*/
+
+* {
+  /*On enlève tout ce que met le nav par défaut*/
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: black;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+h1{
+  position: absolute;
+  text-align: center;
+  background-color: rgba(71, 71, 71, 0.425);
+  border-radius: 10px;
+  border: 1px solid rgba(71, 71, 71, 0.527);
+  font-size: 40px;
+}
+
+.black-section {
+  background-color: black;
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* Background*/
+
+/* body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover }  ---> pour évité la redondance mais ne fonctionnait pas
+*/
+
+#accueil{
+  background: url("images/backaccueil.jpg") no-repeat fixed center center/cover;
+}
+#solution{
+  background: url("images/backsolution.jpg")no-repeat fixed center center/cover;
+}
+#sv{
+  background: url("images/solution.jpg")no-repeat fixed center center/cover;
+}
+#contact {
+  background: url("images/tokyo.jpg")no-repeat fixed center center/cover;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Navbar*/
+label,
+#toggle {
+  display: none;
+}
+
+.liens a {
+  font-size: 22px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.925);
+  border-bottom: 1px solid white;
+}
+/* -------------------------------------------------------------------------- */
+/* L'utilisation des id des mains sont utilisées lors d'ambiguïtés avec des noms communs sur différents fichiers */
+
+/* Pour éviter la redondance des lignes */
+
+#toggle:checked,
+.liens a,
+.content h2,
+.content p,
+.content a,
+#accueil .content2 h2,
+#accueil .content2 p,
+#sv .content2 p,
+#sv .content2 h2,
+th,td,
+#solution .estimer,
+.en-tete,
+.contact,
+#contact h2,
+.mail,
+footer p {
+  text-align: center;
+}
+
+.content .savoir-plus,
+#accueil .content2,
+#sv .content2 p,
+#solution .estimer a,
+#contact button,
+#solution .estimer p,
+input,
+textarea,
+footer p {
+  font-size: 20px;
+}
+
+#solution .estimer a,
+#contact button {
+  background-color: #fa6b04;
+}
+
+label,
+#toggle:checked,
+.liens a,
+h1,
+.black-section,
+#contact button,
+input:focus,
+textarea:focus,
+input[type="text"],
+textarea,
+#contact h2,
+#solution .estimer a,
+#solution .black-section,
+th,td,
+::placeholder,
+footer p {
+  color: white;
+}
+
+.content h2,
+#accueil .content a,
+#solution .savoir-plus,
+#accueil .content2 p,
+#sv .content h2,
+#sv .content2 h2,
+#sv .content3 h2:first-child,
+#solution .estimer h3,
+footer h3 {
+  color: #fa6b04;
+  font-size: 25px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Première section Accueil*/
+#accueil .content p {
+  border: 2px solid #fa6b04;
+  border-radius: 9px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Commun Button En savoir plus - Accueil & Solution*/
+#accueil .content a,
+#solution .savoir-plus {
+  background-color: black;
+  border:1px solid #fa6b04;
+  border-radius: 7px;
+  padding: 4px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Deuxième section Accueil*/
+#accueil .content2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 5%;
+  padding: 7% 0%;
+}
+
+#accueil .content2 h2 {
+  font-size: 25px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*Commun première, deuxième & troisème section Saviez-vous*/
+#sv .content h2,
+#sv .content2 h2,
+#sv .content3 h2:first-child {
+  padding-bottom: 20px;
+}
+/* -------------------------------------------------------------------------- */
+/* Première section Saviez-vous*/
+th,td {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Section groupe d'images Saviez-vous */
+.grp-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 8%;
+}
+
+.grp-img img {
+  border-radius: 30px;
+  border: 1px solid #fa6b04;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Deuxième section Saviez-vous*/
+/* On aurait pu faire un display flex au .content2 & flex-direction column mais inutile cela marche sans */
+#sv .content2 p {
+  padding: 0 5%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Troisieme section Saviez-vous (les temoignages)*/
+.en-tete {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.7fr;
+  padding-bottom: 3%;
+}
+
+.first,
+.second,
+.last {
+  background-color: rgb(36, 36, 36);
+  border: 2px solid rgb(56, 56, 56);
+  border-radius: 10px;
+  margin: 2%;
+  padding: 3%;
+}
+
+.en-tete h2 {
+  font-size: 15px;
+}
+
+.en-tete h3 {
+  font-size: 12px;
+}
+
+#sv .content3 img {
+  height: 40px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+#sv .content3 {
+  padding: 3% 0%;
+}
+
+#sv .content3 h2:first-child {
+  margin-left: 20px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Commun Solution*/
+
+#solution .black-section {
+  background-color: rgba(0, 0, 0, 0.815);
+}
+
+#solution .estimer,
+.transport {
+  border-top: 2px solid white;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Première section Solution*/
+.transport {
+  border-radius: 20px;
+}
+
+#solution .content .savoir-plus {
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: 30px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Deuxième section Solution*/
+#solution .estimer {
+  padding-bottom: 8%;
+}
+
+#solution .estimer h3 {
+  padding-top: 40px;
+}
+
+#solution .estimer p{
+  margin-bottom: 20px;
+}
+#solution .estimer a {  
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+/* -------------------------------------------------------------------------- */
+/* Formulaire Contact*/
+
+#contact h2 {
+  font-size: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 7%;
+}
+
+input,
+textarea {
+  width: 50%;
+  padding: 5px;
+  margin: 1%;
+  background-color: #070606;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+}
+
+textarea {
+  padding-bottom: 10%;
+}
+
+#contact button {
+  border-radius: 7px;
+  margin-left: 40%;
+  padding: 10px 50px;
+  border: 1px solid rgb(27, 27, 27);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer */
+
+footer {
+  border-top: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.925);
+  padding-bottom: 2%;
+  padding-top: 5%;
+}
+
+.fin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+footer h3 {
+  padding-left: 20%;
+  font-size: 30px;
+  padding-top: 40px;
+}
+footer .logo {
+  margin-right: 10%;
+  justify-self: end;
+}
+
+.mail {
+  margin-left: 28%;
+}
+
+/* -------------------------------------------------------------------------- */
+@media (min-width: 450px) {
+  /* Commun pour tout les grands ecran */
+  .back {
+    position: fixed;
+  }
+
+  .titre-container {
+    height: 100vh;
+  }
+
+  h1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*Navbar */
+
+  nav {
+    position: fixed;
+    width: 100%;
+    padding-bottom: 3%;
+    z-index: 100;
+  }
+
+  .liens {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .liens a {
+    margin-left: 5%;
+    margin-right: 5%;
+    
+  }
+
+  .liens a:first-of-type{
+    border: 1px solid rgba(71, 71, 71, 0.425);
+    padding: 10px;
+    background-color: rgba(71, 71, 71, 0.425);
+    border-radius: 8px;
+  }
+
+  .liens a:hover {
+    color: #fa6b04;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*Commun première section Accueil & Saviez-vous & Solution */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 7%;
+    font-size: 20px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Première section Accueil*/
+
+  #accueil .content h2 {
+    padding-bottom: 4%;
+  }
+
+  #accueil .content p {
+    margin-right: 60px;
+    padding: 10px;
+  }
+
+  #accueil .content a {
+    margin-top: 50px;
+    margin-right: 40px;
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Deuxième section Accueil*/
+  #accueil .content2 p {
+    font-size: 40px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Premiere section Saviez-vous*/
+  table {
+    margin-right: 5%;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Section groupe d'images Saviez-vous */
+  .grp-img {
+    margin-left: 10%;
+  }
+
+  .grp-img img {
+    width: 300px;
+    height: 200px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Troisieme section Saviez-vous (les temoignages)*/
+
+  .temoignage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Première section Solution*/
+  #solution .content h2 {
+    padding: 20px 0px;
+    color: white;
+  }
+
+  #solution .content p {
+    border: 2px solid #fa6b04;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+
+  .content .savoir-plus {
+    grid-column:1/span 2;
+    grid-row-start: 4;
+    text-align: center;
+    
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Deuxième section Solution (Estimer)*/
+  #solution .estimer h3 {
+    font-size: 40px;
+  }
+
+  #solution .estimer p {
+    padding-top: 20px;
+  }
+
+}
+
+/* -------------------------------------------------------------------------- */
+/* Deux médias pour le groupe d'images dans Saviez-vous et les deux images des transports dans Solutions qui dégradaient les pages selon la taille des écrans  */
+
+@media (max-width: 1000px) {
+  .grp-img img {
+    width: 190px;
+    height: 110px;
+  }
+  .transport {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 629px) {
+  /* Trois images dans un petit écran sont trop larges et on ne voulait pas les mettre en display row (-> esthétique) donc on en retire une */
+  .grp-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grp-img img:nth-child(2n) {
+    display: none;
+  }
+  .transport {
+    width: 160px;
+    height: 140px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    display: block;
+  }
+}
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 449px) {
+  .titre-container {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 20px;
+    position: relative;
+    margin-top: 30%;
+  }
+  /* -------------------------------------------------------------------------- */
+  /*Navbar*/
+  nav .liens {
+    display: none;
+    flex-direction: column;
+    background: black;
+  }
+
+  label,
+  #toggle:checked + .liens {
+    display: flex;
+  }
+
+  label {
+    margin: 0 90%;
+    font-size: 40px;
+  }
+
+  #toggle:checked + .liens {
+    padding-top: 10%;
+  }
+
+  #toggle:checked,
+  .liens a {
+    margin: 5%;
+  }
+
+  .logo{
+    margin-left: 37%;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*Commun première section Accueil & Saviez-vous */
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+  }
+
+  .content h2 {
+    padding-bottom: 20px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Première section Accueil*/
+  #accueil h2:first-child {
+    order: -2;
+  }
+
+  #accueil p:nth-of-type(2n + 1) {
+    order: -1;
+  }
+
+  #accueil .content p {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  #accueil .content a {
+    margin-top: 40px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Deuxième section Accueil*/
+  #accueil .content2 h2:nth-child(2n) {
+    order: -1;
+  }
+
+  #accueil .content2 p {
+    font-size: 30px;
+  }
+  #accueil .content2 h2{
+    font-size: 15px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Premiere section Saviez-vous*/
+  #sv .content h2:last-of-type {
+    order: 1;
+    margin-top: 5%;
+  }
+
+  #sv .content p {
+    order: 2;
+  }
+
+  .grp-img img {
+    width: 155px;
+    height: 100px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Troisième section Saviez-vous (les témoignages)*/
+  .temoignage {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Première section Solution*/
+  .transport {
+    width: 120px;
+    height: 110px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    display: block;
+  }
+
+  #solution .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #solution .content h2:last-of-type,
+  #solution .content p:last-of-type {
+    order: -1;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Formulaire Contact*/
+
+  form {
+    padding-bottom: 50%;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 5%;
+  }
+
+  ::placeholder {
+    font-size: 15px;
+  }
+
+  #contact h2 {
+    font-size: 20px;
+  }
+
+  #contact button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  /* -------------------------------------------------------------------------- */
+  /* Footer*/
+  footer h3,
+  footer p{
+    font-size: 15px;
+  }
+  .mail {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 50px;
+  }
+}
